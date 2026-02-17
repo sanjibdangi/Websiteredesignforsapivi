@@ -35,7 +35,7 @@ export function ModernFooter() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -43,7 +43,7 @@ export function ModernFooter() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center space-x-2 group"
+                  className="px-8 py-4 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center justify-center space-x-2 group whitespace-nowrap"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />

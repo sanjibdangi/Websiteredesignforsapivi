@@ -43,18 +43,19 @@ export function ModernNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center gap-3 group shrink-0 min-w-0">
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
+              className="shrink-0"
             >
               <img 
                 src={logoImage} 
                 alt="SAPIVI Logo" 
-                className="w-12 h-12 rounded-full shadow-lg ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all" 
+                className="w-12 h-12 rounded-full shadow-lg ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all object-cover" 
               />
             </motion.div>
-            <span className={`text-xl md:text-2xl font-bold transition-colors ${ 
+            <span className={`text-xl md:text-2xl font-bold transition-colors leading-none ${ 
               isScrolled ? 'text-secondary' : 'text-white'
             }`}>
               SAPIVI

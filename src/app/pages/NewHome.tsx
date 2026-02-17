@@ -80,7 +80,7 @@ export function NewHome() {
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section with Parallax */}
       <section 
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 overflow-hidden pt-24 md:pt-0"
       >
         {/* Animated Background */}
         <div className="absolute inset-0 mesh-gradient opacity-40" />
