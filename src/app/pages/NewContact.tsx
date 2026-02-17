@@ -299,39 +299,28 @@ export function NewContact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-24 bg-muted" id="map">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-secondary mb-4">
-                Find Us Here
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Visit our office in Bangalore
-              </p>
-            </div>
+      {/* Map Section */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+      <p className="text-xl text-gray-600">Visit our office in Bangalore</p>
+    </div>
 
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="mx-auto mb-4 text-primary" size={64} />
-                  <p className="text-2xl font-bold text-secondary mb-2">
-                    Bangalore, Karnataka, India
-                  </p>
-                  <p className="text-muted-foreground">
-                    Interactive map integration available
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    <div className="rounded-2xl overflow-hidden shadow-lg">
+      <div className="aspect-[16/9] w-full">
+        <iframe
+          title="SAPIVI Location"
+          src="https://maps.google.com/maps?q=12.934625,77.756433&z=15&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }

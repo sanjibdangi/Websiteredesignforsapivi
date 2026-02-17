@@ -38,9 +38,20 @@ export function Footer() {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <img src={logoImage} alt="SAPIVI Logo" className="w-12 h-12 rounded-full" />
-                <span className="text-2xl font-bold">SAPIVI</span>
-              </div>
+  <img
+    src="/image.png"
+    alt="SAPIVI Logo"
+    className="w-12 h-12 rounded-full object-cover"
+  />
+
+  <div className="flex flex-col leading-tight">
+    <span className="text-2xl font-bold">SAPIVI</span>
+    <span className="text-xs text-gray-400">
+      ISO 9001:2015
+    </span>
+  </div>
+</div>
+
               <p className="text-gray-400 mb-6">
                 Providing innovative solutions in HR consulting, digital marketing, IT services, and management for over 14 years.
               </p>

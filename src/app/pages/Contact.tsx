@@ -194,28 +194,29 @@ export function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600">Visit our office in Bangalore</p>
-          </div>
+      {/* Map Section */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+      <p className="text-xl text-gray-600">Visit our office in Bangalore</p>
+    </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <div className="aspect-[16/9] bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="mx-auto mb-4 text-teal-600" size={48} />
-                <p className="text-xl font-medium text-gray-700">
-                  Bangalore, Karnataka, India
-                </p>
-                <p className="text-gray-500 mt-2">
-                  Interactive map would be integrated here
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="rounded-2xl overflow-hidden shadow-lg">
+      <div className="aspect-[16/9] w-full">
+        <iframe
+          title="SAPIVI Office Location"
+          src="https://maps.app.goo.gl/KstuyjhLu8wwveTu6" 
+          className="w-full h-full border-0"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Office Hours */}
       <section className="py-16 bg-gray-50">

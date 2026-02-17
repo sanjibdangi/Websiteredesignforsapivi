@@ -2,7 +2,6 @@ import { Mail, MapPin, Facebook, Linkedin, Instagram, ArrowRight } from "lucide-
 import { FaPinterest } from "react-icons/fa";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import logoImage from "figma:asset/a85c7ac0c1bf2644dc5a784b827313e8e2f7e34f.png";
 
 export function ModernFooter() {
   return (
@@ -60,16 +59,26 @@ export function ModernFooter() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <img src={logoImage} alt="SAPIVI Logo" className="w-12 h-12 rounded-full ring-2 ring-primary/30" />
-                <span className="text-2xl font-bold">SAPIVI</span>
-              </div>
+               <div className="flex items-center space-x-3 mb-6">
+  <img
+    src="/logo.png"
+    alt="SAPIVI Logo"
+    className="w-12 h-12 rounded-full object-cover"
+  />
+
+  <div className="flex flex-col leading-tight">
+    <span className="text-2xl font-bold">SAPIVI</span>
+    <span className="text-xs text-gray-400">
+      ISO 9001:2015
+    </span>
+  </div>
+</div>
               <p className="text-white/70 mb-6 max-w-md leading-relaxed">
                 Transforming businesses with innovative solutions in HR consulting, digital marketing, IT services, and management for over 14 years.
               </p>
               <div className="flex space-x-3">
                 {[
-                  { Icon: Facebook, href: "https://facebook.com/sapivi", label: "Facebook" },
+                  { Icon: Facebook, href: "https://www.facebook.com/people/Sapivi-Enterprises-Private-Limited/100077498751405/#", label: "Facebook" },
                   { Icon: Linkedin, href: "https://linkedin.com/company/sapivi", label: "LinkedIn" },
                   { Icon: Instagram, href: "https://instagram.com/sapivi", label: "Instagram" },
                   { Icon: FaPinterest, href: "https://pinterest.com/sapivi", label: "Pinterest" }

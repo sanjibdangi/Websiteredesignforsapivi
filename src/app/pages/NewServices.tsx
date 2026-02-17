@@ -237,46 +237,54 @@ export function NewServices() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className={`group relative p-8 bg-gradient-to-br ${service.color} rounded-3xl overflow-hidden cursor-pointer ${
-                  service.size === 'large' ? 'md:col-span-2' : ''
-                }`}
-              >
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all" />
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
-                    <service.icon className="text-white" size={28} />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-white mb-3">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-white/90 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-white/80 text-sm">
-                        <Check className="mr-2 flex-shrink-0" size={16} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex items-center text-white font-semibold group-hover:gap-2 transition-all">
-                    <span>Learn More</span>
-                    <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
-                  </div>
-                </div>
-              </motion.div>
+  key={index}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: index * 0.05 }}
+  whileHover={{ y: -8, scale: 1.02 }}
+  className={`group relative p-8 rounded-3xl overflow-hidden cursor-pointer ${
+    service.size === 'large' ? 'md:col-span-2' : ''
+  }`}
+  style={{
+    backgroundImage: service.image ? `url(${service.image})` : undefined,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* IMAGE + COLOR OVERLAY */}
+  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80`} />
+  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all" />
+
+  <div className="relative z-10">
+    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+      <service.icon className="text-white" size={28} />
+    </div>
+
+    <h3 className="text-2xl font-bold text-white mb-3">
+      {service.title}
+    </h3>
+
+    <p className="text-white/90 mb-6 leading-relaxed">
+      {service.description}
+    </p>
+
+    <ul className="space-y-2 mb-6">
+      {service.features.map((feature, idx) => (
+        <li key={idx} className="flex items-center text-white/80 text-sm">
+          <Check className="mr-2 flex-shrink-0" size={16} />
+          {feature}
+        </li>
+      ))}
+    </ul>
+
+    <div className="flex items-center text-white font-semibold group-hover:gap-2 transition-all">
+      <span>Learn More</span>
+      <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
+    </div>
+  </div>
+</motion.div>
+
             ))}
           </div>
         </div>
