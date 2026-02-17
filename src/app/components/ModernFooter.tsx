@@ -1,0 +1,162 @@
+import { Mail, MapPin, Facebook, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { FaPinterest } from "react-icons/fa";
+import { Link } from "react-router";
+import { motion } from "motion/react";
+import logoImage from "figma:asset/a85c7ac0c1bf2644dc5a784b827313e8e2f7e34f.png";
+
+export function ModernFooter() {
+  return (
+    <footer className="bg-secondary text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 mesh-gradient opacity-10" />
+      
+      {/* Newsletter Section */}
+      <div className="relative border-b border-white/10 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Stay Ahead of the Curve
+              </h3>
+              <p className="text-white/70 text-lg">
+                Get the latest insights on digital transformation, tech trends, and business growth.
+              </p>
+            </motion.div>
+            
+            <motion.form
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="flex gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-4 bg-primary text-white font-semibold rounded-2xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center space-x-2 group"
+                >
+                  <span>Subscribe</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </button>
+              </div>
+            </motion.form>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="relative py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <img src={logoImage} alt="SAPIVI Logo" className="w-12 h-12 rounded-full ring-2 ring-primary/30" />
+                <span className="text-2xl font-bold">SAPIVI</span>
+              </div>
+              <p className="text-white/70 mb-6 max-w-md leading-relaxed">
+                Transforming businesses with innovative solutions in HR consulting, digital marketing, IT services, and management for over 14 years.
+              </p>
+              <div className="flex space-x-3">
+                {[
+                  { Icon: Facebook, href: "https://facebook.com/sapivi", label: "Facebook" },
+                  { Icon: Linkedin, href: "https://linkedin.com/company/sapivi", label: "LinkedIn" },
+                  { Icon: Instagram, href: "https://instagram.com/sapivi", label: "Instagram" },
+                  { Icon: FaPinterest, href: "https://pinterest.com/sapivi", label: "Pinterest" }
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-11 h-11 bg-white/10 backdrop-blur-sm hover:bg-primary rounded-xl flex items-center justify-center transition-all group"
+                  >
+                    <social.Icon className="text-white" size={20} />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-bold mb-6">Quick Links</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "Home", path: "/" },
+                  { label: "About Us", path: "/about" },
+                  { label: "Services", path: "/services" },
+                  { label: "Portfolio", path: "/portfolio" },
+                  { label: "Contact", path: "/contact" }
+                ].map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="text-white/70 hover:text-primary transition-colors flex items-center group"
+                    >
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-primary mr-0 group-hover:mr-2 transition-all" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-bold mb-6">Get in Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Mail className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <p className="text-sm text-white/50 mb-1">Email</p>
+                    <a href="mailto:contact@sapivi.com" className="text-white/90 hover:text-primary transition-colors">
+                      contact@sapivi.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <p className="text-sm text-white/50 mb-1">Location</p>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      No:58, 5th Main Krishna Niwas,<br />
+                      Halasahalli, Bangalore<br />
+                      Karnataka, India 560087
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="relative border-t border-white/10 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-white/50 text-sm">
+              © 2022 Sapivi Enterprises Private Limited. All rights reserved.
+            </p>
+            <p className="text-white/50 text-sm">
+              CIN: U72900KA2021PTC155725
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
